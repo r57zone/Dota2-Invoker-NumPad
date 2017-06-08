@@ -143,7 +143,7 @@ begin
   RegisterHotKey(Main.Handle, VK_NumPad6, 0, VK_NumPad6);
   RegisterHotKey(Main.Handle, VK_NumPad7, 0, VK_NumPad7);
   RegisterHotKey(Main.Handle, VK_NumPad8, 0, VK_NumPad8);
-  RegisterHotKey(Main.Handle, VK_NumPad5, 0, VK_NumPad9);
+  RegisterHotKey(Main.Handle, VK_NumPad9, 0, VK_NumPad9);
 end;
 
 procedure TMain.FormDestroy(Sender: TObject);
