@@ -1,7 +1,7 @@
 # Ru:
 Автокликер скилов Инвокера в Dota 2. 
 ## Скриншоты
-![](https://user-images.githubusercontent.com/9499881/26929982-d2cf1268-4c6c-11e7-804a-dc1f48720813.png)
+![](https://user-images.githubusercontent.com/9499881/26941618-2cf55c3e-4c90-11e7-8c0f-8ebcb26d8a02.png)
 ## Загрузка
 >Версия для Windows XP, 7, 8.1, 10.<br>
 **[Загрузить](https://github.com/r57zone/Dota2-Invoker-NumPad/releases)**<br>
