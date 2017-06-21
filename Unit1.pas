@@ -55,13 +55,23 @@ begin
   SimulateKeyUp(Key);
 end;
 
+procedure MouseLeftClick;
+begin
+  mouse_event(MOUSEEVENTF_LEFTDOWN, Mouse.CursorPos.X, Mouse.CursorPos.Y, 0, 0);
+  mouse_event(MOUSEEVENTF_LEFTUP, Mouse.CursorPos.X, Mouse.CursorPos.Y, 0, 0);
+end;
+
 procedure TMain.WMHotKey(var Msg: TWMHotKey);
+const
+  DelayKey=200; DelaySkill=1700;
 begin
   if Msg.HotKey = VK_NumPad1 then begin
     SimulateKey(ord('Q'));
     SimulateKey(ord('Q'));
     SimulateKey(ord('Q'));
     SimulateKey(ord('R'));
+    Sleep(DelayKey);
+    SimulateKey(ord('D'));
   end;
 
   if Msg.HotKey = VK_NumPad2 then begin
@@ -78,6 +88,8 @@ begin
     SimulateKey(ord('Q'));
     SimulateKey(ord('E'));
     SimulateKey(ord('R'));
+    Sleep(DelayKey);
+    SimulateKey(ord('D'));
   end;
 
   if Msg.HotKey = VK_NumPad4 then begin
@@ -85,6 +97,8 @@ begin
     SimulateKey(ord('W'));
     SimulateKey(ord('W'));
     SimulateKey(ord('R'));
+    Sleep(DelayKey);
+    SimulateKey(ord('D'));
   end;
 
   if Msg.HotKey = VK_NumPad5 then begin
@@ -92,6 +106,8 @@ begin
     SimulateKey(ord('W'));
     SimulateKey(ord('Q'));
     SimulateKey(ord('R'));
+    Sleep(delayKey);
+    SimulateKey(ord('D'));
   end;
 
   if Msg.HotKey = VK_NumPad6 then begin
@@ -99,6 +115,8 @@ begin
     SimulateKey(ord('W'));
     SimulateKey(ord('E'));
     SimulateKey(ord('R'));
+    Sleep(DelayKey);
+    SimulateKey(ord('D'));
   end;
 
   if Msg.HotKey = VK_NumPad7 then begin
@@ -106,6 +124,8 @@ begin
     SimulateKey(ord('W'));
     SimulateKey(ord('E'));
     SimulateKey(ord('R'));
+    Sleep(DelayKey);
+    SimulateKey(ord('D'));
   end;
 
   if Msg.HotKey = VK_NumPad8 then begin
@@ -113,6 +133,8 @@ begin
     SimulateKey(ord('E'));
     SimulateKey(ord('E'));
     SimulateKey(ord('R'));
+    Sleep(DelayKey);
+    SimulateKey(ord('D'));
   end;
 
   if Msg.HotKey = VK_NumPad9 then begin
@@ -120,6 +142,8 @@ begin
     SimulateKey(ord('E'));
     SimulateKey(ord('Q'));
     SimulateKey(ord('R'));
+    Sleep(delayKey);
+    SimulateKey(ord('D'));
   end;
 
   if Msg.HotKey = VK_NumPad0 then begin
@@ -127,8 +151,57 @@ begin
     SimulateKey(ord('E'));
     SimulateKey(ord('W'));
     SimulateKey(ord('R'));
+    Sleep(DelayKey);
+    SimulateKey(ord('D'));
   end;
 
+  if Msg.HotKey = VK_ADD then begin
+    //Торнадо
+    SimulateKey(ord('W'));
+    SimulateKey(ord('W'));
+    SimulateKey(ord('Q'));
+    SimulateKey(ord('R'));
+    Sleep(delayKey);
+    SimulateKey(ord('D'));
+    Sleep(DelayKey);
+    MouseLeftClick;
+
+    Sleep(DelaySkill);
+
+    //Е.М.Р.
+    SimulateKey(ord('W'));
+    SimulateKey(ord('W'));
+    SimulateKey(ord('W'));
+    SimulateKey(ord('R'));
+    Sleep(DelayKey);
+    SimulateKey(ord('D'));
+    Sleep(DelayKey);
+    MouseLeftClick;
+
+    Sleep(DelaySkill);
+
+    //Метеор
+    SimulateKey(ord('E'));
+    SimulateKey(ord('E'));
+    SimulateKey(ord('W'));
+    SimulateKey(ord('R'));
+    Sleep(DelayKey);
+    SimulateKey(ord('D'));
+    Sleep(DelayKey);
+    MouseLeftClick;
+
+   Sleep(DelaySkill);
+
+    //Бласт
+    SimulateKey(ord('Q'));
+    SimulateKey(ord('W'));
+    SimulateKey(ord('E'));
+    SimulateKey(ord('R'));
+    Sleep(delayKey);
+    SimulateKey(ord('D'));
+    Sleep(delayKey);
+    MouseLeftClick;
+  end;
 end;
 
 procedure TMain.FormCreate(Sender: TObject);
@@ -144,6 +217,7 @@ begin
   RegisterHotKey(Main.Handle, VK_NumPad7, 0, VK_NumPad7);
   RegisterHotKey(Main.Handle, VK_NumPad8, 0, VK_NumPad8);
   RegisterHotKey(Main.Handle, VK_NumPad9, 0, VK_NumPad9);
+  RegisterHotKey(Main.Handle, VK_ADD, 0, VK_ADD);
 end;
 
 procedure TMain.FormDestroy(Sender: TObject);
@@ -158,6 +232,7 @@ begin
   UnRegisterHotKey(Main.Handle, VK_NumPad7);
   UnRegisterHotKey(Main.Handle, VK_NumPad8);
   UnRegisterHotKey(Main.Handle, VK_NumPad9);
+  UnRegisterHotKey(Main.Handle, VK_ADD);
 end;
 
 procedure TMain.AboutLbClick(Sender: TObject);
